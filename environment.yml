@@ -1,0 +1,12 @@
+name: bamboo
+channels:
+  - conda-forge
+dependencies:
+  - root
+  - cmake
+  - boost
+  - numpy
+  - pyyaml
+  - pip:
+    - pytest
+    - git+https://gitlab.cern.ch/cp3-cms/bamboo.git@b90738ae81db48d79abe78788d56ad56b6581c14
