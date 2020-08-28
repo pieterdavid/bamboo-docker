@@ -10,7 +10,7 @@ pushd "${workdir}"
 git clone "https://github.com/cp3-llbb/plotIt.git"
 mkdir build
 pushd build
-cmake -DCMAKE_INSTALL_PREFIX="${CONDA_PREFIX}" ../plotIt
+cmake -DCMAKE_INSTALL_PREFIX="/srv/conda/envs/notebook" ../plotIt
 make -j2 install
 popd
 popd
