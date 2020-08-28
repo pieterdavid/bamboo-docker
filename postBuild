@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -e
+workdir=$(mktemp -d)
+if [[ ! -d "${workdir}" ]]; then
+  echo "No such directory: ${workdir}"
+  exit 1
+fi
+pushd "${workdir}"
+git clone "https://github.com/cp3-llbb/plotIt.git"
+mkdir build
+pushd build
+cmake ../plotIt
+make -j2 install
+popd
+popd
+rm -rf "${workdir}"
