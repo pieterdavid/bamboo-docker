@@ -10,7 +10,7 @@ pushd "${workdir}"
 git clone "https://github.com/cp3-llbb/plotIt.git"
 mkdir build
 pushd build
-cmake ../plotIt
+cmake -DCMAKE_INSTALL_PREFIX="${CONDA_PREFIX}" ../plotIt
 make -j2 install
 popd
 popd
