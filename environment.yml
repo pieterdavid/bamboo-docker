@@ -8,6 +8,7 @@ dependencies:
   - numpy
   - pyyaml
   - pip
+  - icu
   - pip:
     - pytest
     - nbgitpuller
