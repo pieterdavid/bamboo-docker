@@ -11,7 +11,7 @@ git clone "https://github.com/cp3-llbb/plotIt.git"
 mkdir build
 pushd build
 cmake -DCMAKE_INSTALL_PREFIX="/srv/conda/envs/notebook" ../plotIt
-VERBOSE=1 make -j2 install
+VERBOSE=1 LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib make -j2 install
 popd
 popd
 rm -rf "${workdir}"
