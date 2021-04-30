@@ -16,7 +16,7 @@ index 3f70cc5..7b960d4 100644
          del self.output_folder
  
 -    def compare_images(self, image1, image2, threshold=0.995):
-+    def compare_images(self, image1, image2, threshold=0.99):
++    def compare_images(self, image1, image2, threshold=0.97):
          if self.__generate_golden_images:
              # Just copy image1 to image2
              shutil.copyfile(image1, image2)
