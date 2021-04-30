@@ -1,0 +1,22 @@
+diff --git a/test/unit_tests/tests.py b/test/unit_tests/tests.py
+index 3f70cc5..7b960d4 100644
+--- a/test/unit_tests/tests.py
++++ b/test/unit_tests/tests.py
+@@ -130,7 +130,7 @@ class plotItSimpleTestCase(unittest.TestCase):
+             yml.write(yaml.dump(configuration, encoding='utf-8'))
+             yml.flush()
+             with open(os.devnull, 'w+b') as null:
+-                subprocess.check_call(['../plotIt', yml.name, '-o', self.output_folder.name], stdout=null)
++                subprocess.check_call(['plotIt', yml.name, '-o', self.output_folder.name], stdout=null)
+ 
+     def setUp(self):
+         self.output_folder = TemporaryFolder()
+@@ -138,7 +138,7 @@ class plotItSimpleTestCase(unittest.TestCase):
+     def tearDown(self):
+         del self.output_folder
+ 
+-    def compare_images(self, image1, image2, threshold=0.995):
++    def compare_images(self, image1, image2, threshold=0.99):
+         if self.__generate_golden_images:
+             # Just copy image1 to image2
+             shutil.copyfile(image1, image2)

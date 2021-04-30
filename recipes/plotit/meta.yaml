@@ -1,0 +1,69 @@
+{% set name = "plotIt" %}
+{% set version = "0.2.0" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/cp3-llbb/{{ name }}/archive/master.tar.gz
+  sha256: 6e23fa54b9e8d120a2bc42ddd5a7f71a676759ebe7ce41197dce8b35817cae8c
+  patches:
+    - path_test.patch
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - {{ compiler('cxx') }}
+    - cmake
+    - make
+    - automake
+    - root-binaries
+  host:
+    - boost-cpp
+    - root_base
+    - root-binaries
+  run:
+    - boost-cpp
+    - root_base
+
+test:
+  requires:
+    - python
+    - pyyaml
+    - requests
+    - root
+    - imagemagick
+  source_files:
+    - test
+  commands:
+    - cd test
+    - ./run_tests.sh
+
+about:
+  home: https://github.com/cp3-llbb/{{ name }}
+  # Remember to specify the license variants for BSD, Apache, GPL, and LGPL.
+  # Prefer the short version, e.g: GPL-2.0 instead of GNU General Public License version 2.0
+  # See https://opensource.org/licenses/alphabetical
+  license: GPL-3.0-or-later
+  # The license_family, i.e. "BSD" if license is "BSD-3-Clause". (optional)
+  license_family: GPL
+  # It is strongly encouraged to include a license file in the package,
+  # (even if the license doesn't require it) using the license_file entry.
+  # See https://conda.pydata.org/docs/building/meta-yaml.html#license-file
+  # license_file: LICENSE.txt
+  summary: "A utility to plot ROOT histograms"
+
+  # The remaining entries in this section are optional, but recommended.
+  description: |
+    plotIt is a simple and fast tool to turn ROOT histograms into stack plots
+  doc_url: http://cp3-llbb.github.io/plotit/
+  home: https://github.com/cp3-llbb/{{ name }}
+
+extra:
+  recipe-maintainers:
+    - cp3-llbb
+    - swertz
+    - pieterdavid
