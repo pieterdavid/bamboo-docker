@@ -1,19 +1,4 @@
 #!/bin/bash
-
 set -e
-workdir=$(mktemp -d)
-if [[ ! -d "${workdir}" ]]; then
-  echo "No such directory: ${workdir}"
-  exit 1
-fi
-pushd "${workdir}"
-git clone "https://github.com/cp3-llbb/plotIt.git"
-mkdir build
-pushd build
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/srv/conda/lib"
-echo $LD_LIBRARY_PATH
-cmake --debug-output -DCMAKE_INSTALL_PREFIX="/srv/conda/envs/notebook" ../plotIt
-VERBOSE=1 make -j2 install
-popd
-popd
-rm -rf "${workdir}"
+mamba build recipes/plotit recipes/bamboo
+mamba install -c local plotit bamboo
