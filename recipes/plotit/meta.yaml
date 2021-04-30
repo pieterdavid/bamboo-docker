@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/cp3-llbb/{{ name }}/archive/master.tar.gz
-  sha256: 6e23fa54b9e8d120a2bc42ddd5a7f71a676759ebe7ce41197dce8b35817cae8c
+  sha256: e3253c0d17e7d5081a6385b1a8d9472471c616c29edea90f72d19ee7152d894b
   patches:
     - path_test.patch
 
