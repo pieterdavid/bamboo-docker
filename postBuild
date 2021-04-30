@@ -1,4 +1,4 @@
 #!/bin/bash
 set -e
 mamba build recipes/plotit recipes/bamboo
-mamba install -c local plotit bamboo
+mamba install -c /srv/conda/envs/notebook/conda-bld plotit bamboo
