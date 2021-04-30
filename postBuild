@@ -1,4 +1,5 @@
 #!/bin/bash
 set -e
 mamba build recipes/plotit recipes/bamboo
+mamba build purge
 mamba install -c /srv/conda/envs/notebook/conda-bld plotit bamboo
