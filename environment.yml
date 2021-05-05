@@ -14,3 +14,4 @@ dependencies:
     - pytest
     - nbgitpuller
     - git+https://gitlab.cern.ch/cp3-cms/bamboo.git@f23e1d062a247cbaf366a65c8507508cac08e051
+    - git+https://gitlab.cern.ch/cp3-cms/pyplotit.git@ec135093d254ad9e9173069bf65d615bc0b754e8
