@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+echo "channel priority: strict" > /root/.condarc
 mamba build recipes/plotit
 mamba build purge
 mamba install -c /srv/conda/envs/notebook/conda-bld plotit
