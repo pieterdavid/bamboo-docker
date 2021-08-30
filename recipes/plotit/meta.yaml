@@ -20,21 +20,21 @@ requirements:
     - cmake
     - make
     - automake
-    - root-binaries
+    - root-binaries=6.24.2
   host:
     - boost-cpp
-    - root_base
-    - root-binaries
+    - root_base=6.24.2
+    - root-binaries=6.24.2
   run:
     - boost-cpp
-    - root_base
+    - root_base=6.24.2
 
 test:
   requires:
     - python
     - pyyaml
     - requests
-    - root
+    - root=6.24.2
     - imagemagick
   source_files:
     - test
