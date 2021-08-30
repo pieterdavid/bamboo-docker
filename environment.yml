@@ -9,6 +9,8 @@ dependencies:
   - pyyaml
   - icu
   - conda-build
+  - conda-verify
+  - bc
   - pip
   - pip:
     - pytest
