@@ -1,7 +1,6 @@
 name: bamboo
 channels:
   - conda-forge
-  - defaults
 dependencies:
   - root=6.24.2
   - cmake
